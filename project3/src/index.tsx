@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+
+// import문과 registerServiceWorker는 자원을 매번 새로 로딩하지 않고 캐시에서 제공해
+// 애플리케이션 로딩을 빠르게 만드는 기능을 코드에 추가한다.
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,10 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  // ts에게 어떤 타입인지 알려주기 위해 HTMLElement 구문을 사용한다.
+  document.getElementById('root') as HTMLElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
